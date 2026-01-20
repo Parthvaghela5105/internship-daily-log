@@ -1,0 +1,7 @@
+Day 1(19/01/2026)
+	system setup and write 5 logical program to check the logic which is given below:
+		1 Program to check whether a given number is prime or not.
+		2 Program to check whether a given number is an Armstrong number or not.
+		3 Program to check whether a character is a vowel or a consonant.
+		4 Program to find the sum of the Fibonacci series numbers at the first N even indices.
+		5 Program to sort and given array in asc order
