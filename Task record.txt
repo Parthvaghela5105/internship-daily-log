@@ -5,3 +5,68 @@ Day 1(19/01/2026)
 		3 Program to check whether a character is a vowel or a consonant.
 		4 Program to find the sum of the Fibonacci series numbers at the first N even indices.
 		5 Program to sort and given array in asc order
+		
+Day 2(20/01/2026)
+	OOPs oriented concepts
+	(class , object , inheritance , polymorphism , encapsulation , abstraction , type promotion)
+	Morning Task
+	<strong># </strong>Program to create a class called "Cat" with instance variables name and age. Implement a default constructor that initializes the name to "Unknown" and the age to 0. Print the values of the variables.
+		<strong># </strong>Program to create a class called Dog with instance variables name and color. Implement a parameterized constructor that takes name and color as parameters and initializes the instance variables. Print the values of the variables
+		<strong># </strong>Program to create a class called "Book" with instance variables title, author, and price. Implement a default constructor and two parameterized constructors:
+			a. One constructor takes title and author as parameters.
+			b. The other constructor takes title, author, and price as parameters.
+			c. Print the values of the variables for each constructor.
+		<strong># </strong>Program to create a class called Account with instance variables accountNumber and balance. Implement a parameterized constructor that initializes these variables with validation:
+			a. accountNumber should be non-null and non-empty.
+			b. balance should be non-negative.
+			c. Print an error message if the validation fails
+		<strong>#</strong> Program to create a class called Point with instance variables x and y. Implement overloaded constructors:
+			a. One constructor takes int parameters.
+			b. Another constructor takes double parameters.
+			c. Print the values of the variables for each constructor.
+			
+			
+	Evening Task
+	Program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print "Repairing a car".
+	Program to create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.
+	Program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee()
+	Program to create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title.
+	Program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.
+		
+
+	Program to create an abstract class Animal with an abstract method called sound(). 
+	Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.
+	Program to create an abstract class BankAccount with abstract methods deposit() and withdraw().
+	 Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement 
+	 the respective methods to handle deposits and withdrawals for each account type
+	Program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). 
+	Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods 
+	to calculate salary and display information for each role.
+	Program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). 
+	Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.
+	Program to create an abstract class Animal with abstract methods eat() and sleep(). 
+	Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.
+ 
+ 
+ Day 3(21/01/2026)
+ 
+	Morning Task
+	
+	Program to create a Animal interface with a method called bark() that takes no arguments and returns void. 
+	Create a Dog class that implements Animal and overrides speak() to print "Dog is barking"
+	
+	Program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. 
+	Implement the getArea() method for each of the three classes.
+	
+	Program to create a banking system with two classes - SavingsAccount, and CurrentAccount. 
+	The bank should have a list of accounts and methods for adding them. Accounts should be an interface 
+	AccountName with methods to deposit, withdraw, calculate interest, and view balances. 
+	SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.
+	
+	Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. 
+	Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.
+	
+	Program to create an interface Playable with a method play() that takes no arguments and returns void. 
+	Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override 
+	the play() method to play the respective sports.
+ 
