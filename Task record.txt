@@ -93,4 +93,31 @@ Day 4(22/01/2026)
 		Morning Meeting : Learning about Exception Handling(how finally block is executed , customized exception , indepth throw )
 		
 		Evening Meeting : Learning about Exception Handling(throws keyword indepth and some interview questions)
+		
+		Problem solves by me
+		
+		1.Write a Java program that throws an exception and catch it using a try-catch block.
+		2.Write a Java program to create a method that takes an integer as a parameter and throws an exception if the number is odd.
+		3.Write a Java program to create a method that reads a file and throws an exception if the file is not found.
+		4.Write a Java program that reads a list of numbers from a file and throws an exception if any of the numbers are positive.
+		5.Write a Java program that reads a file and throws an exception if the file is empty.
+		6.Write a Java program that reads a list of integers from the user and throws an exception if any numbers are duplicates.
+		
+		
+		
+		
+Day 5(23/01/2026)
+		Morning Meeting: Learn about the Cusmtom exception Handling and difference between the final , finally and finalize
+		
+		program solved:
+			Program that throws an exception and catch it using a try-catch block.
+			Program to create a method that takes a string as input and throws customized exception if the string does not contain vowels.
+			Program that reads a list of integers from the user and throws an exception if any numbers are duplicates.
+			Program to demonstrate a checked exception using FileNotFoundException.
+			Program that handles multiple exceptions using multiple catch blocks.
+			Program to handle multiple exceptions using single catch block.
+			Program to demonstrate nested try-catch blocks.
+			Program to handle bank transaction exception (insufficient balance).
+			Program to validate age for voting using a custom exception.
+ 
  

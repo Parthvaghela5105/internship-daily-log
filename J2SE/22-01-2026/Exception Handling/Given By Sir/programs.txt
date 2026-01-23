@@ -1,0 +1,10 @@
+Program that throws an exception and catch it using a try-catch block.
+Program to create a method that takes a string as input and throws customized exception if the string does not contain vowels.
+Program that reads a list of integers from the user and throws an exception if any numbers are duplicates.
+Program to demonstrate a checked exception using FileNotFoundException.
+Program that handles multiple exceptions using multiple catch blocks.
+Program to handle multiple exceptions using single catch block.
+Program to demonstrate nested try-catch blocks.
+Program to handle bank transaction exception (insufficient balance).
+Program to validate age for voting using a custom exception.
+ 
