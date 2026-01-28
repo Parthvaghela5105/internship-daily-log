@@ -120,4 +120,20 @@ Day 5(23/01/2026)
 			Program to handle bank transaction exception (insufficient balance).
 			Program to validate age for voting using a custom exception.
  
+ Day 6(27/01/2026)
  
+		String Program:
+			Program to check whether a given string ends with another string.
+			Example:
+			"Python Exercises" ends with "se"? false                                                                      
+			"Python Exercise" ends with "se"? true
+
+			Program to check whether a given string starts with another string.
+			Program to check whether two String objects contain the same data.
+			Program to compare a given string to another string, ignoring case considerations.
+			Program to replace a specified character with another character
+			Program to check whether a given string starts with another string.
+			Program to trim leading or trailing whitespace from a given string.
+			Program to print the result of removing duplicates from a given string.
+			Program to find the first non-repeating character in a string.
+			Program to count and print all duplicates in the input string.

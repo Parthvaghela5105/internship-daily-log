@@ -28,6 +28,5 @@ class Program7{
         }
 
         System.out.println("Program continues normally...");
- 
 	}
 }
