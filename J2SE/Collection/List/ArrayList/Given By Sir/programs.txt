@@ -1,0 +1,9 @@
+Program to iterate through all elements in an array list.
+Program to insert an element into the array list at the first position.
+Program to update an array element by the given element.
+Program to search for an element in an array list.
+Program to sort a given array list.
+Program to copy one array list into another.
+Program to extract a portion of an array list.
+Program to compare two array lists.
+Program to print all the elements of an ArrayList using the elements' position.
