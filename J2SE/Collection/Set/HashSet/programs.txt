@@ -1,0 +1,5 @@
+Program to iterate through all elements in a hash set.
+Program to test if a hash set is empty or not.
+Program to convert a hash set to an array.
+Program to find numbers less than 7 in a tree set.
+Program to compare two hash set.

@@ -1,0 +1,10 @@
+Program to create a tree set, add some colors (strings) and print out the tree set.
+Program to iterate through all elements in a tree set.
+Program to add all the elements of a specified tree set to another tree set.
+Program to create a reverse order view of the elements contained in a given tree set.
+Program to clone a tree set list to another tree set.
+Program to compare two tree sets.
+Program to get the element in a tree set which is greater than or equal to the given element.
+Program to retrieve and remove the first element of a tree set.
+Program to remove a given element from a tree set.
+Program to get the element in a tree set strictly greater than or equal to the given element.
