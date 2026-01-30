@@ -201,3 +201,31 @@ Day 8(29/01/2026)
 			Program to remove a given element from a tree set.
 			Program to get the element in a tree set strictly greater than or equal to the given element.
 			
+Day 9(30/01/2026)
+
+		Learning:
+			Map:
+				Map interface,
+				HashMap,
+				LinkedHashMap, 
+				SortedMap,
+				TreeMap,
+				IdentityHashMap,
+				WaekHashMap,
+				Entry inner interface
+		
+		TreeMap and HashMap Programs:
+		
+			Program to count the number of key-value (size) mappings in a map.
+			Program to check whether a map contains key-value mappings (empty) or not
+			Program to test if a map contains a mapping for the specified value.
+			Program to get a set view of the keys contained in this map.
+			Program to get a shallow copy of a HashMap instance.
+			Program to copy Tree Map's content to another Tree Map.
+			Program to search for a value in a Tree Map.
+			Program to delete all elements from a Tree Map.
+			Program to get a key-value mapping associated with the greatest key and the least key in a map.
+			Program to get the portion of a map whose keys are strictly less than a given key.
+			Program to get a key-value mapping associated with the greatest key strictly less than the given key. Return null if there is no such key.
+			 
+				
