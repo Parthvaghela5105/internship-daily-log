@@ -229,3 +229,16 @@ Day 9(30/01/2026)
 			Program to get a key-value mapping associated with the greatest key strictly less than the given key. Return null if there is no such key.
 			 
 				
+Day 10(02/02/2026)
+		Learning:
+			Collection:
+				Queue inerface,
+				Priority queue
+			
+			Java 8 Features:
+				Why need of functional programing,
+				list of features
+				Lembda Function
+				Functional interface
+				
+			and solves the program about lembda functions
