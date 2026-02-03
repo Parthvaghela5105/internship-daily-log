@@ -12,7 +12,5 @@ class Program2{
 
         System.out.println("String 1 is empty or not : "+ isEmptyString.test(str1));
         System.out.println("String 2 is empty or not : "+ isEmptyString.test(str2));
-
-        
     }
 } 

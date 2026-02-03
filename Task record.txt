@@ -242,3 +242,29 @@ Day 10(02/02/2026)
 				Functional interface
 				
 			and solves the program about lembda functions
+			
+Day 11(03/02/2026)
+		Learning:
+			Java 8 Features:
+				solve some programs by lembda expression
+				Inbuild functional interface:
+					Predicate,
+					Function,
+					Supplier,
+					Consumer
+				
+		Program:
+			Program to implement a lambda expression to find the sum of two integers.
+			Program to implement a lambda expression to check if a given string is empty.
+			Program to implement a lambda expression to convert a list of strings to uppercase and lowercase.
+			Program to implement a lambda expression to filter out even and odd numbers from a list of integers
+			Program to implement a lambda expression to sort a list of strings in alphabetical order.
+			Program to implement a lambda expression to remove duplicates from a list of integers.
+			Program lambda expression to implement a lambda expression to calculate the factorial of a given number.
+			Program to implement a lambda expression to concatenate two strings.
+			Program to implement a lambda expression to count words in a sentence.
+			Program to implement a lambda expression to calculate the sum of squares of all odd and even numbers in a list.
+			Program to implement a lambda expression to check if a list of strings contains a specific word.
+			Program to implement a lambda expression to find the length of the longest and smallest string in a list.
+			Program to implement a lambda expression to find the second largest and smallest element in an array.
+			Program to implement a lambda expression to find the average length of strings in a list.	
