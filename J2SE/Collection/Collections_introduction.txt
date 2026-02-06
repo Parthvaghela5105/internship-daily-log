@@ -17,13 +17,13 @@ Object[] s=new Object[10000];
 s[0]=new Student(); // Valid
 s[1]=new Acc(); // valid
 
-3. Array concept doesnot implemented in based some data structure: sorting is not possible etc. ->
+3. Array concept does not implemented in based some data structure: sorting is not possible etc. ->
 No underlying data structure| readymade methods are not available
 
 
 ->To overcome the above limitations of array we should go for Collections:
 
-1. Collections are groable in nature, i.e. Based on our requirement we can increase or decrease the size.
+1. Collections are growable in nature, i.e. Based on our requirement we can increase or decrease the size.
 2. Collections can hold both homogeneous and Heterogeneous elements.
 3. Every Collection class is implemented based on some standard data structure, Hence readymade method support is available for every requirement.
 Being a programmer we have to use this method and we are not responsible to provide implementation.

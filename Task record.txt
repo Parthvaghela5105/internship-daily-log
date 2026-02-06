@@ -289,3 +289,14 @@ Day 12(04/02/2026)
 			Program to sort a list of strings in alphabetical order, ascending and descending using streams.
 			Program to find the second smallest and largest elements in a list of integers using streams.
 			Program to calculate the average of a list of integers using streams.
+			
+Day 13(05/02/2026)
+		Core java Assesment test
+		
+		Learning:
+			Basic kt about spring boot
+			basics of maven
+			spring initializr
+			Intelij idea tool
+			
+		and make basic starting project of spring boot
