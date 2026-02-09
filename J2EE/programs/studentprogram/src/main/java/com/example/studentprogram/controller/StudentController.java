@@ -55,8 +55,7 @@ public class StudentController {
         if(s == null)
             return "Data is not available";
 
-        list = list.stream().filter(x -> !x.getRollno().equals(id)).collect(Collectors.toList());
-
+        list.remove(s);
         return "Deleted Successfully";
     }
 

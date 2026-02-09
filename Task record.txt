@@ -309,3 +309,23 @@ Day 14(06/02/2026)
 			Handler Mathods
 		
 		and solves the program about Student Task , Maths operation , Student list -> save , get , remove by id , and remove all
+
+Day 15(09/02/2026)
+		Learning:
+			Annotations
+				@GetMapping 
+				@PostMapping
+				@PathVariable
+				@RequestBody
+				@Component
+				@Autowired
+			
+			RestController Vs Controller
+			Introduce 2nd service layer
+			Service Implementation package
+			Basics of Dependency Injection
+			Bean 
+
+		Write Two Programs:
+		1) Basic Crud perform on Student data by only RestController
+		2) Basic crud perform on Employee data by using service implemantation
