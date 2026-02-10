@@ -329,3 +329,31 @@ Day 15(09/02/2026)
 		Write Two Programs:
 		1) Basic Crud perform on Student data by only RestController
 		2) Basic crud perform on Employee data by using service implemantation
+
+Dat 16(10/02/2026)
+
+		Learning:
+			Learn how to Implement Service interface
+			Field Dependency injection
+
+		task done 
+			1)Employee crud on three layer (RestController , Service , ServiceImplemantation)
+			2)	Project Name: library-management
+				Architecture: Controller → Service →ServiceImpl-> Model
+				Storage: ArrayList<Book> (no DB)
+				APIs: Add, View, Update, Delete, Search Book (By title, Author)
+
+
+
+				API               Method          URL
+				Add book           POST         /books
+				Get all books      GET         /books
+				Get book by ID     GET         /books/{id}
+				Update book        PUT         /books/{id}
+				Delete book       DELETE     /books/{id}
+				Search by title    GET         /books/search/title
+				Search by author     GET         /books/search/author
+				Count books        GET         /books/count
+				Sort by price      GET         /books/sort/price
+				Bulk add        POST         /books/bulk
+				Delete all       DELETE         /books/delete-all

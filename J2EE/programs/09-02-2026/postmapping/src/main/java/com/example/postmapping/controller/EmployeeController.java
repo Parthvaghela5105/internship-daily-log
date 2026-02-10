@@ -39,9 +39,9 @@ public class EmployeeController {
         return employeeImplemantation.removeAllEmployee();
     }
 
-    @PostMapping(value = "update")
-    public String updateEmployee(@RequestBody Employee emp){
-        return employeeImplemantation.updateEmployee(emp);
+    @PostMapping(value = "update/{id}")
+    public String updateEmployee(@PathVariable Long id, @RequestBody Employee emp){
+        return employeeImplemantation.updateEmployee(id , emp);
     }
 
 }

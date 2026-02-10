@@ -33,7 +33,7 @@ public class EmployeeImplemantation {
         if(isDeleted)
             return "deleted successfully";
         else
-            return "not deleted";
+            return "No record with id "+empId;
     }
 
     public String removeAllEmployee(){
@@ -41,8 +41,7 @@ public class EmployeeImplemantation {
         return "Deleted all employees";
     }
 
-    public String updateEmployee(Employee employee){
-        Long empId = employee.getId();
+    public String updateEmployee(Long empId , Employee employee){
         Optional<Employee> optionalEmployee = employeeList.stream().filter(e -> e.getId() == empId).findFirst();
         if(optionalEmployee.isPresent())
         {
@@ -52,6 +51,6 @@ public class EmployeeImplemantation {
             oldEmployee.setBirthDate(employee.getBirthDate());
             return "Employee has been updated successfully";
         }
-        return "Employee has not been updated";
+        return "Employee has not been updated with id "+employee.getId();
     }
 }
