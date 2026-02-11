@@ -357,3 +357,21 @@ Dat 16(10/02/2026)
 				Sort by price      GET         /books/sort/price
 				Bulk add        POST         /books/bulk
 				Delete all       DELETE         /books/delete-all
+
+
+Day 17(11/02/2026)
+
+		Learning:
+			Today learn about forth layer repository layer
+			Learn about ORM
+			Hibernate basics 
+			JpaRepository interface
+			learn difference between proxy and entity package
+
+			Learn the Annotations
+				@Repository
+				@Entity
+				@Table
+				@Id
+
+		write the program on Employee list by using ORM
