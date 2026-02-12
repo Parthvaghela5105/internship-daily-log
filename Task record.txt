@@ -375,3 +375,18 @@ Day 17(11/02/2026)
 				@Id
 
 		write the program on Employee list by using ORM
+
+Day 18(12/02/2026)
+		Learning:
+			Today Learn about mappings in JpaRepository
+			OneToOne mapping
+			OneToMany mapping
+
+			Annotations
+				@OneToOne
+				@OneToMany
+				@GeneratedValue
+				@Column
+			
+		write the 2 programs mapping first oneToOne other OneToOne(Most complex update)
+
