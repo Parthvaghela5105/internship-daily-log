@@ -49,6 +49,10 @@ public class StudentServiceImpl implements StudentService {
             Student student1 = existedStudent.get();
             student1.getAddress().clear();
             student.setId(student1.getId());
+            student.getAddress().stream().forEach(x ->{
+                x.setId(student1.getAddress().get(0).getId());
+                student1.getAddress().remove(0);
+            });
             return "Updated Successfully";
         }
         return "Not Updated";
