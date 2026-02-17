@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService {
     private MapperHelper helper;
 
     @Override
-    public String saveStudent(StudentProxy studentProxy) {
+    public String saveStudent(StudentProxy studentProxy) {;
         Student student = helper.proxyToEntity(studentProxy);
         student.getAddress().forEach(a -> a.setStudent(student));
         repository.save(student);
@@ -29,7 +29,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentProxy> getAllStudents() {
-        return helper.listEntityToListProxy(repository.findAll());
+        List<Student> studentList = repository.findAll();
+        return studentList.stream().map(s -> helper.entityToProxy(s)).toList();
     }
 
     @Override
@@ -59,7 +60,9 @@ public class StudentServiceImpl implements StudentService {
         Optional<Student> optStd = repository.findById(id);
         if(optStd.isPresent())
         {
-            repository.save(helper.proxyToEntity(studentProxy));
+            Student student = helper.proxyToEntity(studentProxy);
+            student.getAddress().forEach(a -> a.setStudent(student));
+            repository.save(student);
             return "Record with id "+id+" is updated successfully";
         }
         return "There is no record found with id "+id;

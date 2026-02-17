@@ -1,11 +1,12 @@
 package com.intern.bionetomanymapping.utility;
 
+import com.intern.bionetomanymapping.entity.Address;
 import com.intern.bionetomanymapping.entity.Student;
+import com.intern.bionetomanymapping.proxy.AddressProxy;
 import com.intern.bionetomanymapping.proxy.StudentProxy;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
@@ -19,7 +20,6 @@ public class MapperHelper {
 
     public StudentProxy entityToProxy(Student std){
         std.getAddress().forEach(s -> s.setStudent(null));
-//        return objectMapper.convertValue(std , StudentProxy.class);
         return modelMapper.map(std , StudentProxy.class);
     }
 
@@ -28,11 +28,13 @@ public class MapperHelper {
         return modelMapper.map(proxy , Student.class);
     }
 
-    public List<StudentProxy> listEntityToListProxy(List<Student> students){
-        return students.stream().map(s -> modelMapper.map(s , StudentProxy.class)).toList();
+    public Address addProxyToEntity(AddressProxy proxy){
+        return modelMapper.map(proxy , Address.class);
     }
 
-    public List<Student> listProxyToListEntity(List<StudentProxy> studentProxies){
-        return studentProxies.stream().map(s -> modelMapper.map(s , Student.class)).toList();
+    public AddressProxy addEntityToProxy(Address add){
+        add.getStudent().setAddress(null);
+        return modelMapper.map(add , AddressProxy.class);
     }
+
 }

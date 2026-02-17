@@ -392,12 +392,24 @@ Day 18(12/02/2026)
 
 Day 19(13/02/2026)
 		Learning:
-			Today learn about oneToOne and OneToMany mapping with bidirectional
+			Today learn about oneToOne mapping with bidirectional
 			Introduce DTO and how to transfer dto to entity and entity to dto by following ways
 			->ModelMapper
 			->ObjectMapper
 			->getter and setter 
 
 			and write program of onetoone bidirectional mapping by using dto
+
+Day 20(16/02/2026)
+		Learning:
+			Today learn about OneToMany Bidirectional mapping 
+			important key points when use oneToOne and OneToMany mapping in bidirectional
+
+			and write the program on oneToOne and OneToMany Bidirectional mapping
 			
+Day 21(17/02/2026)
+		Learning:
+			Today Learn about the manyToMany mapping
+			watch tutorials on youtube for this
+			Write the program on ManyToMany mapping
 

@@ -1,11 +1,9 @@
 package com.intern.bionetomanymapping.entity;
 
-import com.intern.bionetomanymapping.proxy.AddressProxy;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
-
 
 @Data
 @Entity
