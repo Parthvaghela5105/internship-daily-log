@@ -1,6 +1,5 @@
-package com.intern.manytomany.domain;
+package com.intern.globalexception.entity;
 
-import com.intern.manytomany.proxy.AddressProxy;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +15,7 @@ public class Student {
     private String name;
     private String emailId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
     private List<Address> address=new ArrayList<>();
+
 }

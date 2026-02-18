@@ -12,5 +12,5 @@ public class AddressProxy {
     private Long id;
     private String city;
     private String state;
-    private List<StudentProxy> studentProxyList;
+    private List<StudentProxy> student;
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl extends StudentService {
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private MapperHelper helper;
@@ -20,16 +20,16 @@ public class StudentServiceImpl extends StudentService {
 
     @Override
     public String saveStudent(StudentProxy studentProxy) {
-        return repository.save(helper.proxyToEntity(studentProxy));
+        return repository.save(helper.student(studentProxy)).toString();
     }
 
     @Override
     public List<StudentProxy> getAllStudent() {
-        return List.of();
+        return helper.studentProxyList(repository.findAll());
     }
 
     @Override
     public StudentProxy getStudentById(Long id) {
-        return null;
+        return helper.studentProxy(repository.findById(id).orElse(null));
     }
 }

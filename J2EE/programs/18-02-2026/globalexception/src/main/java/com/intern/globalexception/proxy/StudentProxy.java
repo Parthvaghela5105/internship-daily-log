@@ -1,4 +1,4 @@
-package com.intern.manytomany.proxy;
+package com.intern.globalexception.proxy;
 
 import lombok.Data;
 
