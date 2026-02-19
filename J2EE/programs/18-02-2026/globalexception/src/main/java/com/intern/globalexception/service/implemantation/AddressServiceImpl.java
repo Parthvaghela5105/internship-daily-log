@@ -1,5 +1,6 @@
 package com.intern.globalexception.service.implemantation;
 
+import com.intern.globalexception.customized.exception.NoStudentFoundException;
 import com.intern.globalexception.entity.Address;
 import com.intern.globalexception.proxy.AddressProxy;
 import com.intern.globalexception.repository.AddressRepository;
@@ -7,6 +8,7 @@ import com.intern.globalexception.service.AddressService;
 import com.intern.globalexception.service.StudentService;
 import com.intern.globalexception.utility.MapperHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
@@ -36,9 +38,32 @@ public class AddressServiceImpl implements AddressService {
     public AddressProxy getAddressById(Long id) {
         Optional<Address> add = addressRepository.findById(id);
         if(add.isPresent()){
-//             add.get();
-
+            return helper.addressProxy(add.get());
         }
-        return null;
+        else
+            throw new NoStudentFoundException("There is No Address Fount with id "+id , HttpStatus.NOT_FOUND.value());
+    }
+
+    @Override
+    public String deleteById(Long id) {
+        Optional<Address> add = addressRepository.findById(id);
+        if(add.isPresent()){
+            add.get().setStudent(null);
+            addressRepository.deleteById(id);
+            return "Student with id "+id+" has been deleted Successfully";
+        }else{
+            throw new NoStudentFoundException("There is no record found with id "+id , HttpStatus.NOT_FOUND.value());
+        }
+    }
+
+    @Override
+    public String updateAddress(AddressProxy addressProxy, Long id) {
+        Optional<Address> add = addressRepository.findById(id);
+        if(add.isPresent()){
+            addressRepository.save(helper.addProxyToEntity(addressProxy));
+            return "Student with id "+id+" has been deleted Successfully";
+        }else{
+            throw new NoStudentFoundException("There is no record found with id "+id , HttpStatus.NOT_FOUND.value());
+        }
     }
 }

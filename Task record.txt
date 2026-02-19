@@ -413,3 +413,12 @@ Day 21(17/02/2026)
 			watch tutorials on youtube for this
 			Write the program on ManyToMany mapping
 
+Day 22(18/02/2026)
+		Learning:
+			Today Learn about Global Exception Handling
+			Response object
+			Response Entity
+			@RestControllerAdvice
+			Customized Exception Handling
+			
+			And Make the project on it of Global Exception Handling

@@ -8,4 +8,6 @@ public interface AddressService {
     String saveAddress(AddressProxy addressProxy);
     List<AddressProxy> getAllAddress();
     AddressProxy getAddressById(Long id);
+    String deleteById(Long id);
+    String updateAddress(AddressProxy addressProxy , Long id);
 }
