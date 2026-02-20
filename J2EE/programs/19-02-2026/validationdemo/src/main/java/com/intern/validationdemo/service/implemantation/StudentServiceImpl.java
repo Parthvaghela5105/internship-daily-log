@@ -1,11 +1,13 @@
 package com.intern.validationdemo.service.implemantation;
 
+import com.intern.validationdemo.customized.exception.NoStudentFoundException;
 import com.intern.validationdemo.entity.Student;
 import com.intern.validationdemo.proxy.StudentProxy;
 import com.intern.validationdemo.repository.StudentRepository;
 import com.intern.validationdemo.service.StudentService;
 import com.intern.validationdemo.utility.MapperHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +23,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String addStudent(StudentProxy studentProxy) {
-        studentRepository.save(helper.student(studentProxy));
+        Student student = helper.student(studentProxy);
+        student.getAddress().forEach(s -> s.setStudent(student));
+        studentRepository.save(student);
         return "Student saved Successfully";
     }
 
@@ -63,5 +67,15 @@ public class StudentServiceImpl implements StudentService {
             return "Student has been updated Successfully";
         }
         return "There is no record found with id "+id;
+    }
+
+    @Override
+    public StudentProxy findStudentByEmail(String email) {
+        Optional<Student> optStd = studentRepository.findByEmail(email);
+        if(optStd.isPresent()){
+            return helper.studentProxy(optStd.get());
+        }else{
+            throw new NoStudentFoundException("There is No Record found with email "+email , HttpStatus.NOT_FOUND.value());
+        }
     }
 }

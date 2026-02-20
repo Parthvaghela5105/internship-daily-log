@@ -27,6 +27,7 @@ public class MapperHelper {
     }
 
     public AddressProxy addressProxy(Address address){
+        address.getStudent().setAddress(null);
         return mapper.convertValue(address , AddressProxy.class);
     }
 

@@ -11,4 +11,5 @@ public interface StudentService {
     String deleteStudentById(Long id);
     String deleteAllStudent();
     String updateStudent(StudentProxy studentProxy , Long id);
+    StudentProxy findStudentByEmail(String email);
 }

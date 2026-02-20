@@ -2,8 +2,9 @@ package com.intern.validationdemo.controller;
 
 import com.intern.validationdemo.proxy.StudentProxy;
 import com.intern.validationdemo.service.StudentService;
-import jakarta.persistence.GeneratedValue;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public StudentProxy getStudentById(@PathVariable Long id){
+    public StudentProxy getStudentById(@Min(value = 1 , message = "Value should be greater then 1") @Max(value = 100 , message = "Value should be less then 100") @PathVariable Long id){
         return studentService.getStudentById(id);
     }
 

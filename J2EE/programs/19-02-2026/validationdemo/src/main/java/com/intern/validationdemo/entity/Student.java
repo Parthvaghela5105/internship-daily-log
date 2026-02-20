@@ -4,6 +4,7 @@ import com.intern.validationdemo.proxy.AddressProxy;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -14,8 +15,9 @@ public class Student {
     private Long id;
     private String name;
     private String email;
-    private String mobileNo;
+    private Long mobileNo;
+    private LocalDateTime dateTime;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student" , cascade = CascadeType.ALL)
     private List<Address> address;
 }

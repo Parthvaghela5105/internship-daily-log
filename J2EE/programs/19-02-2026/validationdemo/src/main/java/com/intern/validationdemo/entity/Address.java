@@ -12,6 +12,7 @@ public class Address {
     private Long id;
     private String city;
     private String state;
+    private Integer pinCode;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Student student;

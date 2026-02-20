@@ -422,3 +422,31 @@ Day 22(18/02/2026)
 			Customized Exception Handling
 			
 			And Make the project on it of Global Exception Handling
+
+
+Day 23(19/02/2026)
+		Learning:
+			Today learn about the validation on the objects
+			Custom Validations 
+			Make the project on it
+		
+		Annotations:
+			@Valid
+			@Validate
+			@Email
+			@NotBlank
+			@NotNull
+			@NotEmpty
+			@Size
+			@Min
+			@Max
+
+Day 24(20/02/2026)
+		Learning:
+			Today Learn about the Jpa query methods
+			Native query methods by two methods
+				-> simple
+				-> Projection base query
+			How to generate random data by faker library
+			implement project on Jpa quey methods
+			
