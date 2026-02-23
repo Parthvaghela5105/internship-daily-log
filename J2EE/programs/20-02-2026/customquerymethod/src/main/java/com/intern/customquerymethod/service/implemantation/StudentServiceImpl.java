@@ -52,4 +52,65 @@ public class StudentServiceImpl implements StudentService {
         }
         return null;
     }
+
+    @Override
+    public List<StudentProxy> getStudentByEmailOrNumber(String emailId, String number) {
+        return studentRepository.findByEmailIdOrNumber(emailId , number).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByName(String name) {
+        return studentRepository.findByName(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByNameIs(String name) {
+        return studentRepository.findByNameIs(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByNameEquals(String name) {
+        return studentRepository.findByNameEquals(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByAgeLessThan(Integer age) {
+        return studentRepository.findByAgeLessThan(age).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByAgeLessThanEqual(Integer age) {
+        return studentRepository.findByAgeLessThanEqual(age).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByAgeGreaterThan(Integer age) {
+        return studentRepository.findByAgeGreaterThan(age).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByAgeGreaterThanEqual(Integer age) {
+        return studentRepository.findByAgeGreaterThanEqual(age).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByNameLike(String name) {
+        return studentRepository.findByNameLike(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByNameContaining(String name) {
+        return studentRepository.findByNameContaining(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentByAgeIn(List<Integer> age) {
+        return studentRepository.findByAgeIn(age).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
+    @Override
+    public List<StudentProxy> getStudentNameIgnoreCase(String name) {
+        return studentRepository.findByNameIgnoreCase(name).stream().map(s -> helper.getStudentProxy(s)).toList();
+    }
+
 }

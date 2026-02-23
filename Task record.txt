@@ -436,17 +436,14 @@ Day 23(19/02/2026)
 			@Email
 			@NotBlank
 			@NotNull
-			@NotEmpty
-			@Size
-			@Min
-			@Max
-
-Day 24(20/02/2026)
-		Learning:
-			Today Learn about the Jpa query methods
-			Native query methods by two methods
-				-> simple
+  
 				-> Projection base query
 			How to generate random data by faker library
-			implement project on Jpa quey methods
-			
+			implement project on Jpa query methods
+
+Day 25(21/02/2026)
+		Learning 
+			Today Learn about JPQL in jpa
+			How to upload image in Database
+			How retreive the image from database
+			and write the program about the JPQL and native query	
