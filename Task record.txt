@@ -447,3 +447,10 @@ Day 25(21/02/2026)
 			How to upload image in Database
 			How retreive the image from database
 			and write the program about the JPQL and native query	
+
+Day 26(23/02/2026)
+		Learning	
+			Today Learn about the save and get documents in the spring boot 
+			perform the task on that in first we stode the file in db and second we we store file in local Storage
+			
+
