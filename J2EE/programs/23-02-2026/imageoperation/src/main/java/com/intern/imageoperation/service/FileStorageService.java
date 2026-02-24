@@ -7,5 +7,4 @@ import org.springframework.web.multipart.MultipartFile;
 public interface FileStorageService {
     String storeFile(MultipartFile file);
     FileStorageProxy getFile(String dockId);
-    String getFileName(String dockId);
 }

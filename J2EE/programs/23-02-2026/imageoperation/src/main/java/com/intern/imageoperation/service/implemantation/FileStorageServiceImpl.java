@@ -87,8 +87,5 @@ public class FileStorageServiceImpl implements FileStorageService {
             throw new RuntimeException("File is not found with dockId :"+dockId);
     }
 
-    @Override
-    public String getFileName(String dockId) {
-        return "";
-    }
+
 }

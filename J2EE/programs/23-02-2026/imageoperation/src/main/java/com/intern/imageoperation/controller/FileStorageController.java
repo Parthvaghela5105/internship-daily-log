@@ -1,6 +1,6 @@
 package com.intern.imageoperation.controller;
 
-import com.intern.imageoperation.domain.FileStorage;
+
 import com.intern.imageoperation.proxy.FileStorageProxy;
 import com.intern.imageoperation.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
