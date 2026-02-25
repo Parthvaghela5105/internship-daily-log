@@ -10,6 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 
 @RestController()
@@ -37,13 +42,28 @@ public class FileStorageController {
     }
 
     @GetMapping(value = "download/format-excel")
-    public ResponseEntity<byte[]> downloadExcelFormatFile(){
+    public ResponseEntity<String> downloadExcelFormatFile(){
         byte[] bytes = fileStorageService.getExcelFileFormat();
-        String filename = "Employee_"+ UUID.randomUUID().toString()+".xlsx";
-        return  ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION , "attachment;filename="+filename)
-                .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
-                .body(bytes);
+
+        String folderPath = "downloads";
+        File folder = new File(folderPath);
+        if(!folder.exists()){
+            folder.mkdirs();
+        }
+        String filename = "Employee.xlsx";
+
+        Path path = Paths.get(folderPath , filename);
+
+        try{
+            Files.write(path , bytes);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return  new ResponseEntity<>("File saved at: " + path.toAbsolutePath(),
+                HttpStatus.OK);
+
     }
 
 }
