@@ -1,17 +1,23 @@
 package com.intern.springsecuritydemo.controller;
 
+import com.intern.springsecuritydemo.proxy.StudentProxy;
+import com.intern.springsecuritydemo.service.StudentService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.csrf.CsrfToken;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/v1/student")
 public class StudentController {
+
+    @Autowired
+    private StudentService studentService;
+
     @GetMapping(value = "/secure")
     public String checkSecurity(){
         return "Secure webpage";
@@ -27,9 +33,14 @@ public class StudentController {
         return request.getSession().getId();
     }
 
-    @GetMapping(value = "csrf")
+    @GetMapping(value = "/csrf")
     public CsrfToken getCsrfToken(HttpServletRequest request){
         return (CsrfToken) request.getAttribute(CsrfToken.class.getName());
+    }
+
+    @PostMapping(value = "/save-student")
+    public ResponseEntity<String> saveStudent(@RequestBody StudentProxy studentProxy){
+        return new ResponseEntity<>(studentService.saveStudent(studentProxy) , HttpStatus.CREATED);
     }
 
 }

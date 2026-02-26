@@ -460,4 +460,19 @@ Day 27(24/02/2026)
 			Download excel file from database
 			Download excel format file
 			
+Day 28(25/02/2026)
+		Learning
+			Today learn about the basics of Spring Security
+			Filter chain of Spring security
+			What is Csrf?
+			Spring security Architecture
+			Configuration for basic Spring security
+			Make the project on  basic spring security
 
+Day 29(26/02/2026)
+		Learning
+			Learn about inmemmory User security
+			How to store the user in database for security
+			How Authentication works (AuthenticationProvider , DaoAuthenticationProvider , UserDetailsService)
+
+			 
