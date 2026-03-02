@@ -475,4 +475,24 @@ Day 29(26/02/2026)
 			How to store the user in database for security
 			How Authentication works (AuthenticationProvider , DaoAuthenticationProvider , UserDetailsService)
 
+Day 30(27/02/2026)
+		Learning
+			Watch tutorials on Spring security
+			Learn Jwt Token implements
+			Make project on jwtToken implemantation
+
+
+Day 31(02/03/2026)
+		Learning 
+			how to validate Token(Authentication)
+			how authorization works
+			implement project on this
+			working on my project which is "Tailor Shop Management System" in which i implement the entities
+			How inheritance works in the entities
+			How enums are define  
+
+
+
+
+
 			 
