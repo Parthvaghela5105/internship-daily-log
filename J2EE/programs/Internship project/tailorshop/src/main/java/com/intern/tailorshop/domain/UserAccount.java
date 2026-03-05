@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 
 @Entity
 @Data
@@ -18,12 +20,13 @@ public class UserAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @Column(unique = true)
     private String username;
 
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private RoleName role;
+//    @Enumerated(EnumType.STRING)
+    private String role;
 
     private Boolean active = true;
 

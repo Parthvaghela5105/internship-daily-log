@@ -6,5 +6,4 @@ import lombok.Data;
 public class LoginResponseProxy {
     private String token;
     private String username;
-    private String role;
 }

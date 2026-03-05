@@ -11,6 +11,7 @@ import org.springframework.cglib.core.Local;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

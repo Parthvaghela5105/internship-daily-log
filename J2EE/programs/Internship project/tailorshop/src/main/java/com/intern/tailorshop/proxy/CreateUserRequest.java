@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.management.relation.Role;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -13,7 +14,7 @@ import javax.management.relation.Role;
 public class CreateUserRequest {
     private String username;
     private String password;
-    private RoleName role;
+    private String role;
 
     private Long shopId;
 }
