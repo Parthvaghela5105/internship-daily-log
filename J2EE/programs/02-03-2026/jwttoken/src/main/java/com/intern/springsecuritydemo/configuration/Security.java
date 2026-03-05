@@ -33,7 +33,7 @@ public class Security {
                 .authorizeHttpRequests(
                         auth ->
                                 auth.requestMatchers("/v1/student/save-student","/v1/student/auth/login").permitAll()
-                                        .requestMatchers("/v1/student/csrf","/v1/student/session").hasRole("ADMIN")
+                                        .requestMatchers("/v1/student/csrf","/v1/student/session").hasAnyRole("ADMIN","USER")
                                         .requestMatchers("/v1/student/secure","/v1/student/verify").hasRole("USER")
                                         .anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults())

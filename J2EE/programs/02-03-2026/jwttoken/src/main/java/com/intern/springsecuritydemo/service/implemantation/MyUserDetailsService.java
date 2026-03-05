@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,12 +27,14 @@ public class MyUserDetailsService implements UserDetailsService {
 
             Student student = optStd.get();
             String role = student.getRole();
-            SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(role);
+            String[] split = role.split(",");
+            List<SimpleGrantedAuthority> listSimpleGrantedAuthority = Arrays.stream(split).map(SimpleGrantedAuthority::new).toList();
+//            SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(role);
 
             return User.builder()
                     .username(student.getUsername())
                     .password(student.getPassword())
-                    .authorities(simpleGrantedAuthority)
+                    .authorities(listSimpleGrantedAuthority)
                     .build();
 
         }

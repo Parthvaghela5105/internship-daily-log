@@ -493,6 +493,9 @@ Day 31(02/03/2026)
 
 
 
-
+Day 32(02/03/2026)
+		Learning 
+			Multiple role base authentication
+			Implement whole JwtToken project in one time
 
 			 

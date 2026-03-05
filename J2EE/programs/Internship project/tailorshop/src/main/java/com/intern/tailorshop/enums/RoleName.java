@@ -1,8 +1,8 @@
 package com.intern.tailorshop.enums;
 
 public enum RoleName {
-    SUPER_ADMIN,
-    SHOP_ADMIN,
-    TAILOR_EMPLOYEE,
-    CUSTOMER
+    ROLE_SUPER_ADMIN,
+    ROLE_SHOP_ADMIN,
+    ROLE_TAILOR_EMPLOYEE,
+    ROLE_CUSTOMER
 }

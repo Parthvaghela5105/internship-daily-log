@@ -1,18 +1,20 @@
-package com.intern.springsecuritydemo.util;
+package com.intern.tailorshop.util;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
-
 
 @Service
 public class JwtUtil {
@@ -34,16 +36,11 @@ public class JwtUtil {
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
 
-
         Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+        String authority = authorities.iterator().next().getAuthority();
 
-        List<String> roles=new ArrayList<>();
+        claims.put("role",authority);
 
-        for(GrantedAuthority authority:authorities){
-            roles.add(authority.getAuthority());
-        }
-
-        claims.put("roles",roles);
         return createToken(claims, userDetails.getUsername());
     }
 
@@ -91,5 +88,4 @@ public class JwtUtil {
         String base64UrlKey = Encoders.BASE64URL.encode(key.getEncoded());
         return base64UrlKey;
     }
-
 }
