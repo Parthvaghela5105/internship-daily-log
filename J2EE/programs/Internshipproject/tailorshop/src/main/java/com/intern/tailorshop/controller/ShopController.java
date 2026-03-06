@@ -1,8 +1,7 @@
 package com.intern.tailorshop.controller;
 
 import com.intern.tailorshop.proxy.TailorShopProxy;
-import com.intern.tailorshop.service.implemantation.ShopServiceImpl;
-import jakarta.transaction.Transactional;
+import com.intern.tailorshop.service.implementation.ShopServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

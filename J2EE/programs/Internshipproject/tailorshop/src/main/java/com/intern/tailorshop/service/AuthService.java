@@ -7,4 +7,5 @@ import com.intern.tailorshop.proxy.LoginResponseProxy;
 public interface AuthService {
     String createUser(CreateUserRequest createUserRequest);
     LoginResponseProxy loginUser(LoginRequestProxy loginRequestProxy);
+    String createShopAdmin(CreateUserRequest request);
 }

@@ -1,7 +1,6 @@
-package com.intern.tailorshop.service.implemantation;
+package com.intern.tailorshop.service.implementation;
 
 import com.intern.tailorshop.domain.UserAccount;
-import com.intern.tailorshop.enums.RoleName;
 import com.intern.tailorshop.repository.UserAccountRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {

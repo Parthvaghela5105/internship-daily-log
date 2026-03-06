@@ -1,6 +1,6 @@
 package com.intern.tailorshop.filter;
 
-import com.intern.tailorshop.service.implemantation.MyUserDetailsService;
+import com.intern.tailorshop.service.implementation.MyUserDetailsService;
 import com.intern.tailorshop.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -17,7 +17,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component

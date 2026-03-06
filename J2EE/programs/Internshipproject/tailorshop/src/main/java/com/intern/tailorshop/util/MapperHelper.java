@@ -11,12 +11,16 @@ public class MapperHelper {
     @Autowired
     private ObjectMapper mapper;
 
-    public TailorShopProxy getProxyFromEntity(TailorShop shop){
-        return mapper.convertValue(shop , TailorShopProxy.class);
-    }
+//    public TailorShopProxy getProxyFromEntity(TailorShop shop){
+//        return mapper.convertValue(shop , TailorShopProxy.class);
+//    }
+//
+//    public TailorShop getEntityFromProxy(TailorShopProxy proxy){
+//        return mapper.convertValue(proxy , TailorShop.class);
+//    }
 
-    public TailorShop getEntityFromProxy(TailorShopProxy proxy){
-        return mapper.convertValue(proxy , TailorShop.class);
+    public <T> T map(Object source, Class<T> targetClass) {
+        return mapper.convertValue(source, targetClass);
     }
 
 

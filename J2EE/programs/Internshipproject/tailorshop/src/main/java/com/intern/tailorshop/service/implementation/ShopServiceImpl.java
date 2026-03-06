@@ -1,4 +1,4 @@
-package com.intern.tailorshop.service.implemantation;
+package com.intern.tailorshop.service.implementation;
 
 import com.intern.tailorshop.domain.TailorShop;
 import com.intern.tailorshop.exception.customized.ShopNotFoundException;
@@ -23,9 +23,9 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public TailorShopProxy createShop(TailorShopProxy proxy) {
-        TailorShop shop = mapperHelper.getEntityFromProxy(proxy);
+        TailorShop shop = mapperHelper.map(proxy , TailorShop.class);
         TailorShop save = tailorShopRepo.save(shop);
-        return mapperHelper.getProxyFromEntity(save);
+        return mapperHelper.map(save , TailorShopProxy.class);
     }
 
     @Override
@@ -35,9 +35,9 @@ public class ShopServiceImpl implements ShopService {
             throw new ShopNotFoundException("There is no shop found with id "+shopId);
 
         TailorShop tailorShop = optShop.get();
-        TailorShop updatedShop = mapperHelper.getEntityFromProxy(proxy);
+        TailorShop updatedShop = mapperHelper.map(proxy , TailorShop.class);
         updatedShop.setShopId(tailorShop.getShopId());
-        return mapperHelper.getProxyFromEntity(tailorShopRepo.save(updatedShop));
+        return mapperHelper.map(tailorShopRepo.save(updatedShop) , TailorShopProxy.class);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ShopServiceImpl implements ShopService {
     public List<TailorShopProxy> getAllShops() {
         List<TailorShop> all = tailorShopRepo.findAll();
 
-        List<TailorShopProxy> list = all.stream().map(s -> mapperHelper.getProxyFromEntity(s)).toList();
+        List<TailorShopProxy> list = all.stream().map(s -> mapperHelper.map(s , TailorShopProxy.class)).toList();
 
         return list;
     }
@@ -67,7 +67,7 @@ public class ShopServiceImpl implements ShopService {
         Optional<TailorShop> optShop = tailorShopRepo.findById(shopId);
         if(!optShop.isPresent())
             throw new ShopNotFoundException("There is no shop found with id "+shopId);
-        return mapperHelper.getProxyFromEntity(optShop.get());
+        return mapperHelper.map(optShop.get() , TailorShopProxy.class);
     }
 
     @Override

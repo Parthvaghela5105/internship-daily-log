@@ -1,13 +1,17 @@
-package com.intern.tailorshop.service.implemantation;
+package com.intern.tailorshop.service.implementation;
 
+import com.intern.tailorshop.domain.TailorShop;
 import com.intern.tailorshop.domain.UserAccount;
+import com.intern.tailorshop.exception.customized.ShopNotFoundException;
 import com.intern.tailorshop.exception.customized.UserAlreadyPresent;
 import com.intern.tailorshop.proxy.CreateUserRequest;
 import com.intern.tailorshop.proxy.LoginRequestProxy;
 import com.intern.tailorshop.proxy.LoginResponseProxy;
+import com.intern.tailorshop.repository.TailorShopRepo;
 import com.intern.tailorshop.repository.UserAccountRepo;
 import com.intern.tailorshop.service.AuthService;
 import com.intern.tailorshop.util.JwtUtil;
+import com.intern.tailorshop.util.MapperHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -36,6 +40,11 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private MapperHelper mapperHelper;
+    @Autowired
+    private TailorShopRepo tailorShopRepo;
+
     @Override
     public String createUser(CreateUserRequest createUserRequest) {
         Optional<UserAccount> optUser = userAccountRepo.findByUsername(createUserRequest.getUsername());
@@ -49,6 +58,24 @@ public class AuthServiceImpl implements AuthService {
         userAccount.setRole(createUserRequest.getRole());
         userAccountRepo.save(userAccount);
         return "User created successfully";
+    }
+
+    @Override
+    public String createShopAdmin(CreateUserRequest createUserRequest) {
+        Optional<UserAccount> optUser = userAccountRepo.findByUsername(createUserRequest.getUsername());
+
+        if(optUser.isPresent())
+            throw new UserAlreadyPresent("There is username with your selected username", HttpStatus.NOT_FOUND.value());
+
+        TailorShop tailorShop = tailorShopRepo.findById(createUserRequest.getShopId()).orElseThrow(() -> new ShopNotFoundException("Shop Not found"));
+
+
+        UserAccount userAccount = mapperHelper.map(createUserRequest, UserAccount.class);
+        userAccount.setRole("ROLE_SHOP_ADMIN");
+        userAccount.setPassword(passwordEncoder.encode(userAccount.getPassword()));
+        userAccount.setTailorShop(tailorShop);
+        UserAccount save = userAccountRepo.save(userAccount);
+        return "Employee created successfully "+save.toString();
     }
 
     @Override

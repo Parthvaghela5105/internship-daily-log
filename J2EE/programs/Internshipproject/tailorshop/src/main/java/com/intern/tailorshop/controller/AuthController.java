@@ -7,6 +7,7 @@ import com.intern.tailorshop.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,13 @@ public class AuthController {
     @PostMapping(value = "/signup")
     public ResponseEntity<String> signup(@RequestBody CreateUserRequest createUserRequest){
         String user = authService.createUser(createUserRequest);
+        return new ResponseEntity<>(user , HttpStatus.CREATED);
+    }
+
+    @PostMapping(value = "/create-shop-admin")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
+    public ResponseEntity<String> createShopAdmin(@RequestBody CreateUserRequest createUserRequest){
+        String user = authService.createShopAdmin(createUserRequest);
         return new ResponseEntity<>(user , HttpStatus.CREATED);
     }
 
