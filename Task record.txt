@@ -503,4 +503,9 @@ Day 33(05/03/2026)
 			Implement whole jwt Token in my Tailor shop management project
 			Develop shop module in my project 
 
+Day 34(05/03/2026)
+		Learning
+			Implement Whole jwtToken , global exception handler in one project
+			develop the employee module in my tailor shop management system
+
 			 

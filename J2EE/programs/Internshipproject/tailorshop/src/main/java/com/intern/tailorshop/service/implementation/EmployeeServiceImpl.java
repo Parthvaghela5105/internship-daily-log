@@ -2,6 +2,7 @@ package com.intern.tailorshop.service.implementation;
 
 import com.intern.tailorshop.domain.Employee;
 import com.intern.tailorshop.domain.TailorShop;
+import com.intern.tailorshop.exception.customized.EmployeeNotFoundException;
 import com.intern.tailorshop.exception.customized.ShopNotFoundException;
 import com.intern.tailorshop.proxy.EmployeeProxy;
 import com.intern.tailorshop.repository.EmployeeRepo;
@@ -36,12 +37,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<EmployeeProxy> getAllEmployee(Long shopId) {
-        return List.of();
+        List<EmployeeProxy> list = employeeRepo.findAll().stream().map(e -> mapperHelper.map(e, EmployeeProxy.class)).toList();
+        return list;
     }
 
     @Override
     public String updateEmployee(Long id, EmployeeProxy proxy) {
-        return "";
+        employeeRepo.findById(id).orElseThrow(() -> new EmployeeNotFoundException("No employee found with id "+id));
+        return null;
     }
 
     @Override
