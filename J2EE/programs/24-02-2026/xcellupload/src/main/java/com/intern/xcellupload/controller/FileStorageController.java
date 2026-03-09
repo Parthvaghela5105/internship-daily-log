@@ -41,7 +41,7 @@ public class FileStorageController {
 
     }
 
-    @GetMapping(value = "download/format-excel")
+    @GetMapping(value = "/download/format-excel")
     public ResponseEntity<String> downloadExcelFormatFile(){
         byte[] bytes = fileStorageService.getExcelFileFormat();
 
