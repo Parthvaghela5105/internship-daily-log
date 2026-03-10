@@ -510,6 +510,10 @@ Day 34(06/03/2026)
 			revice Sping boot concepts
 
 			 
-Day 35(09/03/2036)
+Day 35(09/03/2026)
 		Learning
 			Implement Security and make entities and proxy in Blood Management System
+
+Day 36(10/03/2026)
+		Learning
+			Implement Admin , Donor , Hospital , User module in Blood Management System project

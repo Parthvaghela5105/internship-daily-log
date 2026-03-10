@@ -24,7 +24,7 @@ public class DonorDetails {
     private LocalDate lastDonationDate;
     private Boolean available;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "user_id")
     private Users users;
 }

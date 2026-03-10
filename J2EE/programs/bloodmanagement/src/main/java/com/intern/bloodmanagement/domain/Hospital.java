@@ -1,9 +1,6 @@
 package com.intern.bloodmanagement.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,9 +16,11 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String hospitalName;
-    private String email;
-    private String password;
     private String address;
     private String contactNumber;
     private String licenseNumber;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
 }

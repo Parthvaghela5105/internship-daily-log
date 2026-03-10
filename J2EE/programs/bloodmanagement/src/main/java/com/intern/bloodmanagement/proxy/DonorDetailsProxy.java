@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl;
 
 import java.time.LocalDate;
 
@@ -20,5 +21,5 @@ public class DonorDetailsProxy {
     private String city;
     private LocalDate lastDonationDate;
     private Boolean available;
-    private Users users;
+    private UserProxy users;
 }

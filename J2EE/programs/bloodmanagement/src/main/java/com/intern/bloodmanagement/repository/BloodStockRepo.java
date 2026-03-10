@@ -4,5 +4,8 @@ import com.intern.bloodmanagement.domain.BloodStock;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.Repository;
 
+import java.util.Optional;
+
 public interface BloodStockRepo extends JpaRepository<BloodStock, Long> {
+    Optional<BloodStock> findByBloodGroup(String bloodGroup);
 }

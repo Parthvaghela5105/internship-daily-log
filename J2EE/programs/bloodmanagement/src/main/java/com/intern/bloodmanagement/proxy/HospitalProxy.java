@@ -13,9 +13,8 @@ import lombok.NoArgsConstructor;
 public class HospitalProxy {
     private Long id;
     private String hospitalName;
-    private String email;
-    private String password;
     private String address;
     private String contactNumber;
     private String licenseNumber;
+    private UserProxy users;
 }

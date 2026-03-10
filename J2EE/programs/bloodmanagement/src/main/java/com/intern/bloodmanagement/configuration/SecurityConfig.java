@@ -27,7 +27,13 @@ public class SecurityConfig {
         return http
                 .csrf( c -> c.disable())
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/v1/auth/**").permitAll()
+                        .requestMatchers("/v1/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers("/v1/donor/**").hasAuthority("DONOR")
+                        .requestMatchers("/v1/user/**").hasAnyAuthority("DONOR","ADMIN","USER")
+                        .requestMatchers("/v1/hospital/**").hasAuthority("HOSPITAL")
+                        .anyRequest().authenticated())
                 .addFilterBefore(authenticationFilter , UsernamePasswordAuthenticationFilter.class)
                 .httpBasic(Customizer.withDefaults())
                 .build();

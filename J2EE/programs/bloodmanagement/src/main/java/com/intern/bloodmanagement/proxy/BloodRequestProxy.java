@@ -19,5 +19,5 @@ public class BloodRequestProxy {
     private Double quantity;
     private LocalDate requestDate;
     private String status;
-    private Hospital hospital;
+    private HospitalProxy hospital;
 }

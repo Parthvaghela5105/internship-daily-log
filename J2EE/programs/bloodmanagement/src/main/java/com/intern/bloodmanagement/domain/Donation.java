@@ -22,7 +22,7 @@ public class Donation {
     private Double quantity;
     private String remarks;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "donor_id")
     private DonorDetails donorDetails;
 }
