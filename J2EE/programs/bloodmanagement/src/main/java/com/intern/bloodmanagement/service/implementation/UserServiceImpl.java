@@ -4,6 +4,7 @@ import com.intern.bloodmanagement.domain.DonorDetails;
 import com.intern.bloodmanagement.proxy.HospitalProxy;
 import com.intern.bloodmanagement.proxy.UserProxy;
 import com.intern.bloodmanagement.repository.DonorDetailsRepo;
+import com.intern.bloodmanagement.repository.HospitalRepo;
 import com.intern.bloodmanagement.repository.UserRepo;
 import com.intern.bloodmanagement.service.UserService;
 import com.intern.bloodmanagement.utility.MapperHelper;
@@ -22,6 +23,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private MapperHelper mapperHelper;
+
+    @Autowired
+    private HospitalRepo hospitalRepo;
 
     @Override
     public List<UserProxy> getByBloodGroup(String bloodGroup) {
@@ -65,6 +69,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<HospitalProxy> getHospitals() {
-        return List.of();
+        return hospitalRepo.findAll().stream().map(hospital -> mapperHelper.map(hospital , HospitalProxy.class)).toList();
     }
 }

@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AuthRequest {
+public class ForgetPassword {
+
     @ValidEmail
     private String email;
+    @Size(min = 6 , max = 12 ,message = "Password size should be between 6 to 12")
     private String password;
 }

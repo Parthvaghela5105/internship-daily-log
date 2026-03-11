@@ -517,3 +517,7 @@ Day 35(09/03/2026)
 Day 36(10/03/2026)
 		Learning
 			Implement Admin , Donor , Hospital , User module in Blood Management System project
+
+Day 37(11/03/2026)
+		Learning
+			Implement Exception handling , Validation and Get Reports part in Blood Management System

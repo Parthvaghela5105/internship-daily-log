@@ -11,4 +11,7 @@ public interface AdminService {
     List<UserProxy> getAllUser();
     String approve(Long id);
     String addBloodStock(BloodStockProxy bloodStockProxy);
+    String approveBloodRequest(Long id);
+    byte[] getExcell();
+    byte[] getUserReport();
 }

@@ -1,8 +1,10 @@
 package com.intern.bloodmanagement.service.implementation;
 
 import com.intern.bloodmanagement.domain.Users;
+import com.intern.bloodmanagement.exception.customized.UserNotFoundException;
 import com.intern.bloodmanagement.proxy.AuthRequest;
 import com.intern.bloodmanagement.proxy.AuthResponse;
+import com.intern.bloodmanagement.proxy.ForgetPassword;
 import com.intern.bloodmanagement.proxy.UserProxy;
 import com.intern.bloodmanagement.repository.UserRepo;
 import com.intern.bloodmanagement.service.AuthService;
@@ -15,6 +17,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 
 @Service
@@ -38,6 +42,7 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
     @Override
     public String register(UserProxy proxy) {
         Users users = mapperHelper.map(proxy, Users.class);
@@ -59,5 +64,17 @@ public class AuthServiceImpl implements AuthService {
         }
 
         return authResponse;
+    }
+
+    @Override
+    public String forgetPassword(ForgetPassword forgetPassword) {
+        String email = forgetPassword.getEmail();
+        Optional<Users> optUser = userRepo.findByEmail(email);
+        if(optUser.isPresent()){
+            Users users = optUser.get();
+            users.setPassword(passwordEncoder.encode(forgetPassword.getPassword()));
+            return userRepo.save(users).toString();
+        }
+        throw new UserNotFoundException("user not found with email "+email);
     }
 }
