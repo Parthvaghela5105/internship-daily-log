@@ -1,5 +1,6 @@
 package com.intern.bloodmanagement.controller;
 
+import com.intern.bloodmanagement.proxy.BloodRequestHistoryProxy;
 import com.intern.bloodmanagement.proxy.BloodRequestProxy;
 import com.intern.bloodmanagement.proxy.HospitalProxy;
 import com.intern.bloodmanagement.service.HospitalService;
@@ -20,7 +21,7 @@ public class HospitalController {
     private HospitalService hospitalService;
 
     @PostMapping(value = "/create")
-    public ResponseEntity<String> createHospital(@RequestBody HospitalProxy hospitalProxy){
+    public ResponseEntity<String> createHospital(@Valid @RequestBody HospitalProxy hospitalProxy){
         return new ResponseEntity<>(hospitalService.createHospital(hospitalProxy) , HttpStatus.CREATED);
     }
 
@@ -35,7 +36,7 @@ public class HospitalController {
     }
 
     @GetMapping(value = "/request/history/{id}")
-    public ResponseEntity<List<BloodRequestProxy>> history(@PathVariable Long id){
+    public ResponseEntity<List<BloodRequestHistoryProxy>> history(@PathVariable Long id){
         return new ResponseEntity<>(hospitalService.requestHistory(id) , HttpStatus.OK);
     }
 }

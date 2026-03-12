@@ -1,4 +1,4 @@
-package com.intern.bloodmanagement.exception;
+package com.intern.bloodmanagement.exception.global;
 
 import com.intern.bloodmanagement.exception.customized.AlreadyApprovedException;
 import com.intern.bloodmanagement.exception.customized.BloodGroupNotAvailableException;

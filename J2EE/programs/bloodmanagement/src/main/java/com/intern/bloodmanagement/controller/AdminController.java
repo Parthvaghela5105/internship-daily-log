@@ -4,11 +4,13 @@ import com.intern.bloodmanagement.domain.BloodStock;
 import com.intern.bloodmanagement.proxy.BloodStockProxy;
 import com.intern.bloodmanagement.proxy.UserProxy;
 import com.intern.bloodmanagement.service.AdminService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -17,7 +19,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/v1/admin")
@@ -37,7 +38,7 @@ public class AdminController {
     }
 
     @PostMapping(value = "/blood-stock/add")
-    public ResponseEntity<String> addBloodStock(@RequestBody BloodStockProxy bloodStockProxy){
+    public ResponseEntity<String> addBloodStock(@Valid @RequestBody BloodStockProxy bloodStockProxy){
         return new ResponseEntity<>(adminService.addBloodStock(bloodStockProxy), HttpStatus.CREATED);
     }
 

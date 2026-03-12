@@ -1,5 +1,7 @@
 package com.intern.bloodmanagement.proxy;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +15,9 @@ import java.time.LocalDateTime;
 @Builder
 public class BloodStockProxy {
     private Long id;
+    @NotBlank
+    @Pattern(regexp = "^(A|B|AB|O)[+-]$",
+            message = "Invalid blood group")
     private String bloodGroup;
     private Double unitsAvailable;
     private LocalDateTime lastUpdated;

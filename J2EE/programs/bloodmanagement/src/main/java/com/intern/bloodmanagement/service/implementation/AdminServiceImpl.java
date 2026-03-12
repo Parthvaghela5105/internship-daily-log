@@ -78,15 +78,21 @@ public class AdminServiceImpl implements AdminService {
         Double requestedQuantity = bloodRequest.getQuantity();
         Double unitsAvailable = bloodStock.getUnitsAvailable();
 
-        if(unitsAvailable > requestedQuantity && !bloodRequest.getStatus().equalsIgnoreCase("APPROVE")){
-            bloodStock.setUnitsAvailable(unitsAvailable - requestedQuantity);
-            bloodRequest.setStatus("APPROVE");
-            bloodRequestRepo.save(bloodRequest);
-            bloodStockRepo.save(bloodStock);
-            return "Approved Successfully";
-        }else if(bloodRequest.getStatus().equalsIgnoreCase("APPROVE")){
+        if(bloodRequest.getStatus().equalsIgnoreCase("APPROVE")){
             throw new RuntimeException("Blood request Already Apporved");
         }
+
+        if(unitsAvailable > requestedQuantity ){
+            bloodStock.setUnitsAvailable(unitsAvailable - requestedQuantity);
+            bloodRequest.setStatus("APPROVE");
+
+              bloodRequestRepo.save(bloodRequest);
+            bloodStockRepo.save(bloodStock);
+            return "Approved Successfully";
+        }
+
+        bloodRequest.setStatus("REJECTED");
+        bloodRequestRepo.save(bloodRequest);
         throw new NotSufficientBloodAvailableException("There is no Sufficient blood quantity available for "+bloodGroup+" bloodgroup");
     }
 

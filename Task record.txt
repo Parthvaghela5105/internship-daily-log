@@ -521,3 +521,7 @@ Day 36(10/03/2026)
 Day 37(11/03/2026)
 		Learning
 			Implement Exception handling , Validation and Get Reports part in Blood Management System
+
+Day 38(12/03/2026)
+		Learning
+			improve code quality in project and make changes given by sir

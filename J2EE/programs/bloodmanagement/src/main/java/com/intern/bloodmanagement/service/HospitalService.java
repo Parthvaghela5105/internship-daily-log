@@ -1,6 +1,7 @@
 package com.intern.bloodmanagement.service;
 
 import com.intern.bloodmanagement.domain.Hospital;
+import com.intern.bloodmanagement.proxy.BloodRequestHistoryProxy;
 import com.intern.bloodmanagement.proxy.BloodRequestProxy;
 import com.intern.bloodmanagement.proxy.HospitalProxy;
 
@@ -14,5 +15,5 @@ public interface HospitalService {
 
     String hospitalBloodRequest(BloodRequestProxy bloodRequestProxy);
 
-    List<BloodRequestProxy> requestHistory(Long id);
+    List<BloodRequestHistoryProxy> requestHistory(Long id);
 }

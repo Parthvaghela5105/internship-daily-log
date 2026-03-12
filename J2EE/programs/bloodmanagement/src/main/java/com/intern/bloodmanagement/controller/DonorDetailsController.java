@@ -6,6 +6,7 @@ import com.intern.bloodmanagement.proxy.DonationProxy;
 import com.intern.bloodmanagement.proxy.DonorDetailsProxy;
 import com.intern.bloodmanagement.service.DonorDetailsService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +27,13 @@ public class DonorDetailsController {
     }
 
     @PutMapping(value = "/profile")
-    public ResponseEntity<String> updateDonorDetails(@RequestBody DonorDetailsProxy donorDetailsProxy){
+    public ResponseEntity<String> updateDonorDetails(@Valid @RequestBody DonorDetailsProxy donorDetailsProxy){
         return new ResponseEntity<>(donorDetailsService.updateDonorDetails(donorDetailsProxy) , HttpStatus.OK);
     }
 
 
     @PostMapping(value ="/donate")
-    public ResponseEntity<String> donateBlood(@RequestBody DonationProxy donation){
+    public ResponseEntity<String> donateBlood(@Valid @RequestBody DonationProxy donation){
         return new ResponseEntity<>(donorDetailsService.donateBlood(donation) , HttpStatus.CREATED);
     }
 

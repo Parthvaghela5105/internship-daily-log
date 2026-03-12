@@ -47,7 +47,8 @@ public class AuthServiceImpl implements AuthService {
     public String register(UserProxy proxy) {
         Users users = mapperHelper.map(proxy, Users.class);
         users.setPassword(passwordEncoder.encode(users.getPassword()));
-        return userRepo.save(users).toString();
+        userRepo.save(users);
+        return "Register successfully";
     }
 
     @Override
