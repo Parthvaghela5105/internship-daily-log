@@ -45,6 +45,9 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String register(UserProxy proxy) {
+        if(userRepo.findByEmail(proxy.getEmail()).isPresent()){
+            throw new RuntimeException(proxy.getEmail() +" email id is already present");
+        }
         Users users = mapperHelper.map(proxy, Users.class);
         users.setPassword(passwordEncoder.encode(users.getPassword()));
         userRepo.save(users);

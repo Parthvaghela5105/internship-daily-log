@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -71,6 +72,7 @@ public class DonorDetailsServiceimpl implements DonorDetailsService {
         Long id = donationProxy.getDonorDetails().getId();
         DonorDetails donorDetails = donorDetailsRepo.findById(id).orElseThrow(() -> new RuntimeException("Donor is not found"));
         Donation donation = mapperHelper.map(donationProxy, Donation.class);
+        donation.setDonationDate(LocalDate.now());
         donation.setRemarks("PENDING");
         donation.setDonorDetails(donorDetails);
         return donationRepo.save(donation).toString();

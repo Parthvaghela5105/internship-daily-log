@@ -14,8 +14,10 @@ import com.intern.bloodmanagement.service.HospitalService;
 import com.intern.bloodmanagement.utility.MapperHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authorization.method.AuthorizeReturnObject;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,12 +38,17 @@ public class HospitalServiceImpl implements HospitalService {
     @Autowired
     private BloodStockRepo bloodStockRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public String createHospital(HospitalProxy hospitalProxy) {
         Hospital map = mapperHelper.map(hospitalProxy, Hospital.class);
         Users users = mapperHelper.map(hospitalProxy.getUsers(), Users.class);
-        if(users.getRole().equalsIgnoreCase("HOSPITAL"))
+        if(users.getRole().equalsIgnoreCase("HOSPITAL")){
+            users.setPassword(passwordEncoder.encode(users.getPassword()));
             map.setUsers(users);
+        }
         else
             throw new RuntimeException("You not select the required role user");
         return hospitalRepo.save(map).toString();
@@ -64,6 +71,8 @@ public class HospitalServiceImpl implements HospitalService {
 
         if(unitsAvailable > bloodRequest.getQuantity()){
             bloodRequest.setHospital(hospital);
+            bloodRequest.setStatus("PENDING");
+            bloodRequest.setRequestDate(LocalDate.now());
             return bloodRequestRepo.save(bloodRequest).toString();
         }
 
